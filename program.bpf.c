@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note
-/* Copyright (c) 2024 CHANGEME-Authors */
+/* Copyright (c) 2024 Alejandro Salamanca */
 
 #include <vmlinux.h>
 
@@ -25,7 +25,7 @@ struct event {
 
 GADGET_TRACER_MAP(events, 1024 * 256);
 
-GADGET_TRACER(changeme_mytracer, events, event);
+GADGET_TRACER(cuda_mytracer, events, event);
 
 SEC("tracepoint/syscalls/sys_enter_chdir")
 int tracepoint__sys_enter_chdir(struct trace_event_raw_sys_enter *ctx) {

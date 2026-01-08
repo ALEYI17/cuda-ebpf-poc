@@ -1,25 +1,20 @@
-name: 'TODO: Fill the gadget name'
-description: 'TODO: Fill the gadget description'
-tracers:
-  changeme_mytracer:
-    mapName: events
-    structName: event
-structs:
-  event:
+name: cuda-ebpf-poc
+description: Traces cuda operations
+homepageURL: 'TODO: Fill the gadget homepage URL'
+documentationURL: 'TODO: Fill the gadget documentation URL'
+sourceURL: 'TODO: Fill the gadget source code URL'
+datasources:
+  cuda_mytracer:
     fields:
-    - name: timestamp
-      description: Timestamp
-      attributes:
-        template: timestamp
-    - name: pid
-      description: Process ID
-      attributes:
-        template: pid
-    - name: comm
-      description: Process name
-      attributes:
-        template: comm
-    - name: mntns_id
-      description: Mount namespace ID
-      attributes:
-        template: ns
+      comm:
+        annotations:
+          description: 'TODO: Fill field description'
+      mntns_id:
+        annotations:
+          description: 'TODO: Fill field description'
+      pid:
+        annotations:
+          description: 'TODO: Fill field description'
+      timestamp:
+        annotations:
+          description: 'TODO: Fill field description'
