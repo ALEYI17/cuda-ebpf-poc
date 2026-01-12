@@ -6,12 +6,38 @@ sourceURL: 'TODO: Fill the gadget source code URL'
 datasources:
   cuda_mytracer:
     fields:
+      block_x:
+        annotations:
+          columns.width: "64"
+          description: block x from dim 3
+      block_y:
+        annotations:
+          columns.width: "64"
+          description: block y from dim 3
+      block_z:
+        annotations:
+          columns.width: "64"
+          description: block z from dim 3
       comm:
         annotations:
           description: 'TODO: Fill field description'
+          template: comm
+      grid_x:
+        annotations:
+          columns.width: "64"
+          description: grid x from dim 3
+      grid_y:
+        annotations:
+          columns.width: "64"
+          description: grid y from dim 3
+      grid_z:
+        annotations:
+          columns.width: "64"
+          description: grid z from dim 3
       mntns_id:
         annotations:
           description: 'TODO: Fill field description'
+          template: ns
       pid:
         annotations:
           description: 'TODO: Fill field description'
