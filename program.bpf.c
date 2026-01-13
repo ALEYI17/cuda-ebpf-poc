@@ -7,6 +7,7 @@
 #include <bpf/bpf_helpers.h>
 #include <bpf/bpf_tracing.h>
 
+#include <gadget/user_stack_map.h>
 #include <gadget/buffer.h>
 #include <gadget/macros.h>
 #include <gadget/mntns.h>
@@ -16,6 +17,7 @@
 #define TASK_COMM_LEN 16
 #endif
 
+GADGET_PARAM(collect_ustack);
 
 struct event {
   gadget_timestamp timestamp;
@@ -29,6 +31,8 @@ struct event {
   __u32 block_x;
   __u32 block_y;
   __u32 block_z;
+
+  struct gadget_user_stack ustack;
 };
 
 GADGET_TRACER_MAP(events, 1024 * 256);
@@ -65,6 +69,8 @@ int BPF_UPROBE(handle_cuLaunchkernel,
   event->block_x = blockX;
   event->block_y = blockY;
   event->block_z = blockZ;
+
+  gadget_get_user_stack(ctx,&event->ustack);
 
   gadget_submit_buf(ctx, &events, event, sizeof(*event));
 

@@ -44,3 +44,20 @@ datasources:
       timestamp:
         annotations:
           description: 'TODO: Fill field description'
+      ustack:
+        annotations:
+          description: 'TODO: Fill field description'
+params:
+  ebpf:
+    collect_build_id:
+      key: collect_build_id
+      defaultValue: ""
+      description: 'TODO: Fill parameter description'
+    collect_ustack:
+      key: collect_ustack
+      defaultValue: ""
+      description: 'TODO: Fill parameter description'
+    ig_build_id_max_entries:
+      key: ig_build_id_max_entries
+      defaultValue: ""
+      description: 'TODO: Fill parameter description'
