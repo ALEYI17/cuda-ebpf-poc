@@ -41,6 +41,9 @@ datasources:
       pid:
         annotations:
           description: 'TODO: Fill field description'
+      stream:
+        annotations:
+          description: 'TODO: Fill field description'
       timestamp:
         annotations:
           description: 'TODO: Fill field description'

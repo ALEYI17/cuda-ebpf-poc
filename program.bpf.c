@@ -16,6 +16,7 @@
 #ifndef TASK_COMM_LEN
 #define TASK_COMM_LEN 16
 #endif
+#define MAX_GPUKERN_ARGS 16
 
 GADGET_PARAM(collect_ustack);
 
@@ -33,6 +34,8 @@ struct event {
   __u32 block_z;
 
   struct gadget_user_stack ustack;
+  u64 stream;
+
 };
 
 GADGET_TRACER_MAP(events, 1024 * 256);
@@ -59,9 +62,11 @@ int BPF_UPROBE(handle_cuLaunchkernel,
   event->pid = pid_tgid >> 32;
   bpf_get_current_comm(&event->comm, sizeof(event->comm));
 
-  u64 blockZ = 0;
+  u64 blockZ = 0,stream=0;
 
   bpf_probe_read_user(&blockZ, sizeof(blockZ), (void *)(PT_REGS_SP(ctx) + 8));
+
+  bpf_probe_read_user(&stream, sizeof(stream),(void *)(PT_REGS_SP(ctx) + 24));
 
   event->grid_x = gridX;
   event->grid_y = gridY;
@@ -69,6 +74,7 @@ int BPF_UPROBE(handle_cuLaunchkernel,
   event->block_x = blockX;
   event->block_y = blockY;
   event->block_z = blockZ;
+  event->stream = stream;
 
   gadget_get_user_stack(ctx,&event->ustack);
 
