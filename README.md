@@ -8,7 +8,7 @@ Gadget](https://inspektor-gadget.io/). It cuda/GPU operation such as LaunchKerne
 ## How to use
 
 ```bash
-$ sudo ig run cuda-ebpf-poc:latest
+$ make run PARAMS="--verify-image=false -o jsonpretty -v --collect_ustack --host"
 ```
 
 ## Requirements
