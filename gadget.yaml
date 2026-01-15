@@ -8,36 +8,28 @@ datasources:
     fields:
       block_x:
         annotations:
-          columns.width: "64"
-          description: block x from dim 3
+          description: 'TODO: Fill field description'
       block_y:
         annotations:
-          columns.width: "64"
-          description: block y from dim 3
+          description: 'TODO: Fill field description'
       block_z:
         annotations:
-          columns.width: "64"
-          description: block z from dim 3
+          description: 'TODO: Fill field description'
       comm:
         annotations:
           description: 'TODO: Fill field description'
-          template: comm
       grid_x:
         annotations:
-          columns.width: "64"
-          description: grid x from dim 3
+          description: 'TODO: Fill field description'
       grid_y:
         annotations:
-          columns.width: "64"
-          description: grid y from dim 3
+          description: 'TODO: Fill field description'
       grid_z:
         annotations:
-          columns.width: "64"
-          description: grid z from dim 3
+          description: 'TODO: Fill field description'
       mntns_id:
         annotations:
           description: 'TODO: Fill field description'
-          template: ns
       pid:
         annotations:
           description: 'TODO: Fill field description'
@@ -48,6 +40,43 @@ datasources:
         annotations:
           description: 'TODO: Fill field description'
       ustack:
+        annotations:
+          description: 'TODO: Fill field description'
+  memalloc_tracer:
+    fields:
+      byte_size:
+        annotations:
+          description: 'TODO: Fill field description'
+      comm:
+        annotations:
+          description: 'TODO: Fill field description'
+      mntns_id:
+        annotations:
+          description: 'TODO: Fill field description'
+      pid:
+        annotations:
+          description: 'TODO: Fill field description'
+      timestamp:
+        annotations:
+          description: 'TODO: Fill field description'
+  memcpy_tracer:
+    fields:
+      byte_size:
+        annotations:
+          description: 'TODO: Fill field description'
+      comm:
+        annotations:
+          description: 'TODO: Fill field description'
+      kind:
+        annotations:
+          description: 'TODO: Fill field description'
+      mntns_id:
+        annotations:
+          description: 'TODO: Fill field description'
+      pid:
+        annotations:
+          description: 'TODO: Fill field description'
+      timestamp:
         annotations:
           description: 'TODO: Fill field description'
 params:
