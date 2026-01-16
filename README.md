@@ -3,11 +3,12 @@
 # cuda-ebpf-poc
 
 cuda-ebpf-poc is a [gadget from Inspektor
-Gadget](https://inspektor-gadget.io/). It cuda/GPU operation such as LaunchKernel, MemAlloc, etc
+Gadget](https://inspektor-gadget.io/). It traces cuda/GPU operation such as LaunchKernel, MemAlloc,Memcpy.
 
 ## How to use
 
 ```bash
+$ make build
 $ make run PARAMS="--verify-image=false -o jsonpretty -v --collect_ustack --host"
 ```
 
